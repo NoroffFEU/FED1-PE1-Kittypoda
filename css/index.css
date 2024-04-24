@@ -1,15 +1,47 @@
-.logo {
+body{
+  margin: 0px;
+}
+
+header{
+  background-color: #EFF7F1;
+  border: solid 2px #0E3728;
+  display: flex; 
+  height: 60px;
+  align-items: center;  
+}
+
+header a {
+  color: #0E3728;
+  text-decoration: none;   
+}
+
+.logo a{
   font-family: "Lemon", serif;
   font-weight: 400;
   font-style: normal;
   color: #0E3728;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: 20px; 
 }
+
+ul{
+  margin: 0px;
+}
+
+li{
+  list-style: none;
+  display: inline;
+  padding: 10px;
+}
+
 
 .header-nav{
   font-family: "Jaldi", sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #0E3728;
+  font-size: 20px;
 }
 
 h1{
@@ -18,7 +50,6 @@ h1{
   font-style: normal;
   font-size: 40px;
   color: #0E3728;
-
 }
 
 h2{
