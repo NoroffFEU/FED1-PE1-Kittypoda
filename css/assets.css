@@ -2,16 +2,25 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #EFF7F1;
+  background-color: #EFF7F1; 
+}
+
+main{
+  border: solid 2px #0E3728;
 }
 
 header {
   background-color: #EFF7F1;
-  border: solid 2px #0E3728;
+  border-inline: solid 2px  #0E3728;
+  border-top: solid 2px #0E3728;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
+}
+
+header:hover{
+  background-color: #A0FBD6;
 }
 
 .logo a {
@@ -88,7 +97,7 @@ button{
 }
 
 button:hover {
-  background-color: #C7ECE1;
+  background-color: #A0FBD6;
   color: #0E3728;
 
 }

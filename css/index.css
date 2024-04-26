@@ -23,10 +23,14 @@
   line-height: 2;
 }
 
+span:hover{
+  background-color:#A0FBD6
+}
+
 @media (min-width: 737px) {
   
   .hero-element{
-    height: 700px;
+    height: 869px;
     max-width: 1600px;
   }
 
