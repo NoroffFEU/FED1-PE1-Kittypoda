@@ -1,128 +1,41 @@
-
-body, h1, h2, h3, p {
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #EFF7F1;
+.hero-element{
+  margin: 20px auto;
+  background-image:url('/img/hero\ img.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 340px;
+  max-width: 360px;
+  border-radius: 50px;
   border: solid 2px #0E3728;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-}
-
-.logo a {
-  font-family: "Lemon", serif;
-  font-weight: 400;
-  font-size: 24px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #0E3728;
-  margin: 0 10px;
-  display: inline-block;
-}
-
-.header-nav {
-  font-family: "Jaldi", sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  color: #0E3728;
-}
-
-.header-nav ul {
-  margin: 0;
-  display: flex;
-  justify-content: flex-end;  
-  flex-grow: 1; 
-  padding: 0px;
-}
-
-.header-nav li {
-  display: inline-block;
-  padding: 10px;
-  list-style: none;
-}
-
-.header-nav a {
-  text-decoration: none;
-  color: #0E3728;
 }
 
 
-h1{
-  font-family: "Jaldi", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 40px;
-  color: #0E3728;
+.hero-element >h1{
+  padding: 50px 20px 5px 20px;
 }
 
-h2{
-  font-family: "Jaldi", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
+.hero-element button{
+  margin: 0px 0px 0px 20px;
 }
 
-p{
-  font-family: "Jura", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
+ h1 >span{
+  background-color: #FDF0F2;
+  line-height: 2;
 }
 
-button{
-  font-family: "Jaldi", sans-serif;
-  font-size: 20px;
-  color: #F2F8FD;
-  background-color: #0E3728;
-  border-radius: 60px;
-  border-color: #0E3728;
-  padding: 10px 50px;
-}
-
-button:hover {
-  background-color: #C7ECE1;
-  color: #0E3728;
-
-}
-
-@media (min-width: 850px) {
-  .logo a{
-    font-size: 30px; 
-    margin: 0 70px;
+@media (min-width: 737px) {
+  
+  .hero-element{
+    height: 700px;
+    max-width: 1600px;
   }
 
-  .header-nav {
-    font-size: 30px;
+  .hero-element >h1{
+    padding: 200px 0px 5px 60px;
   }
-
-  .header-nav li {
-    padding: 20px; 
+  
+  .hero-element button{
+    margin: 0px 0px 0px 60px;
   }
-
-  .header-nav ul {
-    padding: 70px;
-  }
-
-  h1{
-    font-size: 60px;
-  }
-
-  h2{
-    font-size: 30px;
-  }
-
-  p{
-    font-size: 18px;
-    letter-spacing: 5%;
-  }
-
-  button{
-    font-size: 30px;
-  }
-
+  
 }
