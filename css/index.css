@@ -1,48 +1,55 @@
-body{
-  margin: 0px;
+
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
 }
 
-header{
+header {
   background-color: #EFF7F1;
   border: solid 2px #0E3728;
-  display: flex; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 60px;
-  align-items: center;  
 }
 
-header a {
-  color: #0E3728;
-  text-decoration: none;   
-}
-
-.logo a{
+.logo a {
   font-family: "Lemon", serif;
   font-weight: 400;
-  font-style: normal;
-  color: #0E3728;
   font-size: 24px;
   text-transform: uppercase;
-  margin: 20px; 
+  text-decoration: none;
+  color: #0E3728;
+  margin: 0 10px;
+  display: inline-block;
 }
 
-ul{
-  margin: 0px;
-}
-
-li{
-  list-style: none;
-  display: inline;
-  padding: 10px;
-}
-
-
-.header-nav{
+.header-nav {
   font-family: "Jaldi", sans-serif;
   font-weight: 700;
-  font-style: normal;
-  color: #0E3728;
   font-size: 20px;
+  color: #0E3728;
 }
+
+.header-nav ul {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;  
+  flex-grow: 1; 
+  padding: 0px;
+}
+
+.header-nav li {
+  display: inline-block;
+  padding: 10px;
+  list-style: none;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #0E3728;
+}
+
 
 h1{
   font-family: "Jaldi", sans-serif;
@@ -65,4 +72,23 @@ p{
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
+}
+
+@media (min-width: 850px) {
+  .logo a{
+    font-size: 30px; 
+    margin: 0 70px;
+  }
+
+  .header-nav {
+    font-size: 30px;
+  }
+
+  .header-nav li {
+    padding: 20px; 
+  }
+
+  .header-nav ul {
+    padding: 70px;
+  }
 }
