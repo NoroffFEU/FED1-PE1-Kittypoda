@@ -11,8 +11,8 @@ main{
 
 header {
   background-color: #EFF7F1;
-  border-inline: solid 2px  #0E3728;
-  border-top: solid 2px #0E3728;
+  border: 2px solid #0E3728; 
+  border-bottom: none; 
   display: flex;
   justify-content: space-between;
   align-items: center;
