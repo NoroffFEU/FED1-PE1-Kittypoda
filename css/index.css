@@ -27,6 +27,11 @@ span:hover{
   background-color:#A0FBD6
 }
 
+.carousel h2{
+  text-transform: uppercase;
+  margin: 20px;
+}
+
 @media (min-width: 737px) {
   
   .hero-element{
