@@ -99,7 +99,31 @@ button{
 button:hover {
   background-color: #A0FBD6;
   color: #0E3728;
+}
 
+footer{
+  background-color: #0E3728;
+  height: 60px;
+  padding: 100px 0px 0px 10px;
+  display: flex;
+}
+
+
+footer img{
+  height: 35px;
+  padding: 5px;
+}
+
+.footer-logo{
+  font-family: "Lemon", serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #F2F8FD;
+  display: flex;
+  justify-content: flex-end; 
+  flex-grow: 1; 
+  margin: 20px; 
 }
 
 @media (min-width: 737px) {
