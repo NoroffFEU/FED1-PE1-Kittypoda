@@ -35,11 +35,11 @@ span:hover{
   }
 
   .hero-element >h1{
-    padding: 200px 0px 5px 60px;
+    padding: 200px 0px 5px 240px;
   }
   
   .hero-element button{
-    margin: 0px 0px 0px 60px;
+    margin: 0px 0px 0px 240px;
   }
   
 }
