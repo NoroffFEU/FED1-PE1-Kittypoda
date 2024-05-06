@@ -1,0 +1,15 @@
+.login{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  min-width: 600px;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-img{
+  background-image: url(/img/lisbon.png);
+  background-size: cover;
+  height: 200px;
+}
