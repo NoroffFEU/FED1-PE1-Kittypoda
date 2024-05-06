@@ -55,7 +55,7 @@ header:hover{
   list-style: none;
 }
 
-.header-nav a {
+a {
   text-decoration: none;
   color: #0E3728;
 }
@@ -124,6 +124,21 @@ footer img{
   justify-content: flex-end; 
   flex-grow: 1; 
   margin: 11px; 
+}
+
+input {
+  border: 2px solid #0E3728;
+  border-radius: 50px;
+  background-color: #EFF7F1;
+  color: #0E3728;
+  padding: 5px 50px;
+  font-family: "Jaldi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+  outline: none;   
 }
 
 @media (min-width: 737px) {

@@ -13,3 +13,7 @@
   background-size: cover;
   height: 200px;
 }
+
+h2 span{
+  text-decoration: underline;
+}
