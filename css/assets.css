@@ -6,12 +6,12 @@ body{
 }
 
 main{
-  border: solid 2px #0E3728;
+  border: solid 1.5px #0E3728;
 }
 
 header {
   background-color: #EFF7F1;
-  border: 2px solid #0E3728; 
+  border: 1.5px solid #0E3728; 
   border-bottom: none; 
   display: flex;
   justify-content: space-between;
@@ -76,6 +76,7 @@ h2{
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
+  margin: 0px;
 }
 
 p{
@@ -91,9 +92,10 @@ button{
   font-size: 20px;
   color: #F2F8FD;
   background-color: #0E3728;
-  border-radius: 60px;
-  border-color: #0E3728;
-  padding: 10px 50px;
+  border: 1.5px solid #0E3728;
+  border-radius: 50px;
+  padding: 5px 50px;
+  margin: 10px;
 }
 
 button:hover {
@@ -126,20 +128,7 @@ footer img{
   margin: 11px; 
 }
 
-input {
-  border: 2px solid #0E3728;
-  border-radius: 50px;
-  background-color: #EFF7F1;
-  color: #0E3728;
-  padding: 5px 50px;
-  font-family: "Jaldi", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
-  text-align: center;
-  margin: 10px;
-  outline: none;   
-}
+
 
 @media (min-width: 737px) {
   .logo a{
@@ -147,9 +136,7 @@ input {
     margin: 0 70px;
   }
 
-  .header-nav {
-    font-size: 30px;
-  }
+
 
   .header-nav li {
     padding: 20px; 
@@ -163,19 +150,12 @@ input {
     font-size: 60px;
   }
 
-  h2{
-    font-size: 30px;
-  }
 
   p{
     font-size: 18px;
     letter-spacing: 5%;
   }
 
-  button{
-    font-size: 30px;
-  }
-  
   .footer-logo{
     font-size: 30px;
   }

@@ -1,19 +1,73 @@
 .login{
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 2rem;
-  min-width: 600px;
-  align-items: center;
+  gap: 3rem;
+  padding: 7rem 2rem 2rem 2rem;
   justify-content: center;
+  height: 800px;
 }
 
 .login-img{
-  background-image: url(/img/lisbon.png);
+  background-image:url(/img/lisbon.png);
   background-size: cover;
-  height: 200px;
+  height: 500px;
+  width: 500px;
+  border-radius: 50px;
+  border: solid 1.5px #0E3728;
+  display: none;
 }
+
+.login-form{
+  text-align: center;
+  min-width: 400px;
+  padding: 5rem 2rem 2rem 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column; 
+}
+
+input {
+border: 1.5px solid #0E3728;
+border-radius: 50px;
+background-color: #EFF7F1;
+color: #0E3728;
+padding: 5px 50px;
+font-family: "Jaldi", sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 20px;
+text-align: center;
+margin: 10px;
+outline: none;   
+}
+
+input:hover{
+  background-color:#FDF0F2;
+}
+
+input:focus{
+  background-color: #F2F8FD;
+}
+
+
 
 h2 span{
   text-decoration: underline;
+}
+
+
+@media (min-width: 737px) {
+  .login-img{
+    background-image:url(/img/lisbon.png);
+    background-size: cover;
+    height: 500px;
+    width: 500px;
+    border-radius: 50px;
+    border: solid 2px #0E3728;
+    display: flex;
+  }
+  
+ 
+  
 }
