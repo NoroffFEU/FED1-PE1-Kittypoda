@@ -1,28 +1,45 @@
 import { apiRegisterAccount } from "./api.mjs";
 
-async function registerUser (url, userData) {
-try{
-  const postData = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(userData),
+async function registerUser(url, userData) {
+  try {
+      const postData = {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(userData),
+      };
+
+      const response = await fetch(url, postData);
+      const json = await response.json();
+      return json;
+  } catch (error) {
+      console.error('Registration failed:', error);
+  }
+}
+
+const registrationForm = document.getElementById('registrationForm');
+
+registrationForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+
+  if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+  }
+
+  const userData = {
+      name,
+      email,
+      password,
   };
+console.log(userData)
 
-  const response = await fetch (url, postData);
-  const json = await response.json();
-  return json;
-} catch (error) {
-}
-}
-
-const user = {
-  name: 'oda',
-  email:'oda@noroff.no',
-  password: 'my-password',
-}
-console.log(user);
-
-registerUser (apiRegisterAccount, user)
-
+  const result = await registerUser(apiRegisterAccount, userData);
+  console.log('Registration result:', result);
+});
