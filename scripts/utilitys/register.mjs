@@ -1,6 +1,6 @@
 import { apiRegisterAccount } from "./api.mjs";
 
-async function registerUser(url, userData) {
+ async function registerUser(url, userData) {
   try {
       const postData = {
           method: 'POST',
@@ -9,9 +9,12 @@ async function registerUser(url, userData) {
           },
           body: JSON.stringify(userData),
       };
-
+      
+      
       const response = await fetch(url, postData);
       const json = await response.json();
+      localStorage.setItem('userName',JSON.stringify(json.data.name))
+      console.log (json.data.name)
       return json;
   } catch (error) {
       console.error('Registration failed:', error);
