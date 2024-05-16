@@ -12,5 +12,9 @@ console.log(apiLogin)
 
 const userName = JSON.parse (localStorage.getItem('userName'))
 console.log(userName)
-const API_USER_URL = `/blog/post/${userName}`
+
+const API_USER_URL = `/blog/posts/${userName}`
 console.log(API_USER_URL)
+
+export const apiUserurl = API_BASE_URL + API_USER_URL
+console.log(apiUserurl)
