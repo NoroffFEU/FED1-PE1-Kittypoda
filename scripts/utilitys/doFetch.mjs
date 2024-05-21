@@ -1,6 +1,5 @@
-import { apiUserurl } from "./api.mjs";
 
-async function doFetch(url) {
+export async function doFetch(url) {
   try{
     const token = localStorage.getItem('accessToken');
     const getData = {
@@ -14,9 +13,10 @@ async function doFetch(url) {
     console.log(response);
     const json = await response.json();
     console.log(json)
+    return json
   } catch (error){
   
   }
 }
 
-doFetch(apiUserurl);  
+ 
