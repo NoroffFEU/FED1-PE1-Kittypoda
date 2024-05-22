@@ -12,7 +12,7 @@ async function loginUser(url, userData) {
 
     const response = await fetch(url, postData);
     const json = await response.json();
-    const accessToken = json.accessToken;
+    const accessToken = json.data.accessToken;
 
     localStorage.setItem('accessToken', accessToken);
     localStorage.setItem('userName',JSON.stringify (json.data.name))
