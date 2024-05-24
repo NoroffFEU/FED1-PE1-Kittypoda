@@ -1,7 +1,7 @@
 import { apiUserurl } from "./utilitys/api.mjs";
 import { doFetch } from "./utilitys/doFetch.mjs";
 
-function generatePost(post) {
+export function generatePost(post) {
   const postWrapper = document.createElement('div');
   postWrapper.classList.add('post-wrapper');
 
