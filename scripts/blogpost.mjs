@@ -8,14 +8,7 @@ function generateSinglePost(onePost) {
   const postContainer = document.createElement ("div");
   postContainer.classList = "one-post";
 
-  const bannerContainer = document.createElement('img');
-  if (onePost.banner && onePost.banner.url) {
-    bannerContainer.src = onePost.banner.url;
-  } else {
-    // default image 
-    bannerContainer.src = 'https://images.unsplash.com/photo-1557683316-973673baf926?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvbG9yfGVufDB8fDB8fHww'; 
-  }
-  
+ 
   const mediaContainer = document.createElement('img');
   if (onePost.media && onePost.media.url) {
     mediaContainer.src = onePost.media.url;
@@ -36,7 +29,7 @@ function generateSinglePost(onePost) {
   body.textContent = onePost.body;
 
   main.appendChild(postContainer);
-  postContainer.append(mediaContainer,heading, postDate, body);
+  postContainer.append(mediaContainer,heading, postDate, body,);
 
   return postContainer;
 }
