@@ -8,6 +8,7 @@ newPostForm.addEventListener('submit', async (event) => { event.preventDefault()
   const body = document.getElementById('text').value;
   const mediaimg = document.getElementById('media').value;
   const mediaalt = document.getElementById('media-alt').value;
+  const bannerimg = document.getElementById('banner').value;
   
 
   const token = localStorage.getItem('accessToken');
@@ -19,7 +20,10 @@ newPostForm.addEventListener('submit', async (event) => { event.preventDefault()
     body: body,
     media: {
       url: mediaimg,
-      alt: mediaalt
+      alt: mediaalt,
+    },
+    banner: {
+      url: bannerimg,
     }
 
     }),

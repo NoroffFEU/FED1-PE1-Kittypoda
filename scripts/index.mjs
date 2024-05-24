@@ -9,15 +9,17 @@ function generatePost(post) {
   postContainer.classList.add('post-container');
 
   const postPageLink = document.createElement('a');
-  postPageLink.href = './html/blogpost.html';
-  postPageLink.addEventListener('click', () => {
-    localStorage.setItem('post', JSON.stringify(post));
+  postPageLink.addEventListener('click', (event) => {
+    event.preventDefault()
+    const postId = post.id;
+    const newLink = `./html/blogpost.html?postId=${postId}`
+    window.location.assign(newLink)
   });
 
   const heading = document.createElement('h1');
   heading.textContent = post.title;
 
-  const mediaContainer = document.createElement('img');
+  /*const mediaContainer = document.createElement('img');
   if (post.media && post.media.url) {
     mediaContainer.src = post.media.url;
     mediaContainer.alt = post.media.alt || 'Post media';
@@ -26,15 +28,22 @@ function generatePost(post) {
     mediaContainer.src = 'https://images.unsplash.com/photo-1557683316-973673baf926?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvbG9yfGVufDB8fDB8fHww'; 
     mediaContainer.alt = 'Default media';
   }
+*/
 
+const bannerContainer = document.createElement('img');
+if (post.banner && post.banner.url) {
+  bannerContainer.src = post.banner.url;
+} else {
+  bannerContainer.src = 'https://images.unsplash.com/photo-1557683316-973673baf926?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvbG9yfGVufDB8fDB8fHww'; 
+}
   const postDate = document.createElement('h2');
   postDate.textContent = post.created;
 
-  postContainer.append(postPageLink, mediaContainer, postDate);
+  postContainer.append(postPageLink, bannerContainer, postDate);
   postPageLink.appendChild(heading);
   postWrapper.appendChild(postContainer);
   console.log(postWrapper);
-
+  
   return postWrapper;
 }
 
