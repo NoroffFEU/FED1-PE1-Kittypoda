@@ -34,16 +34,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px; 
-  justify-content: center; 
- 
+  justify-content: center;  
 }
 
 
 .post-wrapper {
   flex: 1 1 1; 
   box-sizing: border-box;
-  margin: 0; 
-  
+  margin: 0;  
 }
 
 
@@ -73,9 +71,7 @@
 }
 
 .media-container h1:hover{
- 
   opacity: 1;
-
 }
   
 
