@@ -29,7 +29,7 @@ function generateSinglePost(onePost) {
   body.textContent = onePost.body;
 
   main.appendChild(postContainer);
-  postContainer.append(mediaContainer,heading, postDate, body,);
+  postContainer.append(heading, postDate, mediaContainer,body,);
 
   return postContainer;
 }
