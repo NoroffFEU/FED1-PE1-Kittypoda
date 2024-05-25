@@ -1,3 +1,3 @@
 import { renderHomePage } from "./index.mjs";
 
-renderHomePage(false);
+renderHomePage(false,true);
