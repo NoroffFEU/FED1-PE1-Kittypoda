@@ -1,7 +1,7 @@
 import { apiUserurl } from "./utilitys/api.mjs";
 import { doFetch } from "./utilitys/doFetch.mjs";
 
-export function generatePost(post) {
+export function generatePost(post, includeMedia = true) {
   const postWrapper = document.createElement('div');
   postWrapper.classList.add('post-wrapper');
 
@@ -12,51 +12,61 @@ export function generatePost(post) {
   postPageLink.addEventListener('click', (event) => {
     event.preventDefault();
     const postId = post.id;
-    const newLink = `./html/blogpost.html?postId=${postId}`;
+    const newLink = `/html/blogpost.html?postId=${postId}`;
     window.location.assign(newLink);
   });
 
-  const mediaContainer = document.createElement('div');
-  mediaContainer.classList.add('media-container');
+  if (includeMedia) {
+    const mediaContainer = document.createElement('div');
+    mediaContainer.classList.add('media-container');
 
-  const image = document.createElement('img');
-  if (post.media && post.media.url) {
-    image.src = post.media.url;
-    image.alt = post.media.alt || 'Post media';
+    const image = document.createElement('img');
+    if (post.media && post.media.url) {
+      image.src = post.media.url;
+      image.alt = post.media.alt || 'Post media';
+    } else {
+      // default image 
+      image.src = 'https://www.colorhexa.com/a0fbd6.png'; 
+      image.alt = 'Default media';
+    }
+
+    const heading = document.createElement('h1');
+    const headingSpan = document.createElement('span');
+    headingSpan.textContent = post.title;
+    heading.appendChild(headingSpan);
+
+    mediaContainer.append(image, heading);
+    postPageLink.appendChild(mediaContainer);
   } else {
-    // default image 
-    image.src = 'https://www.colorhexa.com/a0fbd6.png'; 
-    image.alt = 'Default media';
+    const heading = document.createElement('h1');
+    const headingSpan = document.createElement('span');
+    headingSpan.textContent = post.title;
+    heading.appendChild(headingSpan);
+
+    postPageLink.appendChild(heading);
   }
 
-  const heading = document.createElement('h1');
-  const headingSpan = document.createElement('span');
-  headingSpan.textContent = post.title;
-  heading.appendChild(headingSpan);
-
-  mediaContainer.append(image, heading);
-  postPageLink.appendChild(mediaContainer);
   postContainer.appendChild(postPageLink);
   postWrapper.appendChild(postContainer);
 
   return postWrapper;
 }
 
-function displayPosts(posts) {
+function displayPosts(posts, includeMedia = true) {
   const displayPostsContainer = document.getElementById('display-posts');
   displayPostsContainer.textContent = '';
   posts.forEach((post) => {
-    const postHtml = generatePost(post);
+    const postHtml = generatePost(post, includeMedia);
     displayPostsContainer.appendChild(postHtml);
   });
 }
 
-async function renderHomePage() {
+export async function renderHomePage(includeMedia = true) {
   try {
     const responseData = await doFetch(apiUserurl);
     if (responseData && responseData.data) {
       const posts = responseData.data;
-      displayPosts(posts);
+      displayPosts(posts, includeMedia);
     } else {
       console.error('No data found in the API response.');
     }
@@ -66,4 +76,3 @@ async function renderHomePage() {
 }
 
 renderHomePage();
-
