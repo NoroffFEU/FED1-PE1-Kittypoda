@@ -90,6 +90,7 @@ h3{
   font-size: 20px;
   margin: 0px;
   padding: 0%;
+  text-transform: uppercase;
 }
 
 p{
@@ -107,13 +108,18 @@ button{
   background-color: #0E3728;
   border: 1.5px solid #0E3728;
   border-radius: 50px;
-  padding: 5px 50px;
+  padding: 7px 40px;
   margin: 10px;
 }
 
 button:hover {
   background-color: #A0FBD6;
   color: #0E3728;
+}
+
+span{
+  background-color: #FDF0F2;
+  line-height: 2;
 }
 
 footer{
@@ -164,7 +170,11 @@ footer img{
   }
 
   h2{
-    font-size: 50px;
+    font-size: 60px;
+  }
+  
+  h3{
+    font-size: 30px;
   }
 
   p{
@@ -176,5 +186,7 @@ footer img{
     font-size: 30px;
   }
 
-  
+  button{
+    padding: 13px 60px; 
+  }
 }
