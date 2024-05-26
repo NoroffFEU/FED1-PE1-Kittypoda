@@ -1,0 +1,22 @@
+
+.hi{
+  padding: 20px;
+  text-align: center;
+}
+
+.blog-feed-admin{
+ background-color: #F2F8FD;
+ border-radius: 50px;
+ border: solid 1.5px #0E3728;
+ padding: 20px;
+ margin: 40px;
+}
+
+.blog-feed-admin h2{
+  text-transform: uppercase;
+ }
+
+.new{
+  position: relative;
+  left: 75%
+}

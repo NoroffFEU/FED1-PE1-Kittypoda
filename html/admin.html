@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Feed</title>
   <link rel="stylesheet" href="../css/assets.css">
-  <link rel="stylesheet" href="../css/blogpost.css">
+  <link rel="stylesheet" href="../css/admin.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Jura:wght@300..700&family=Lemon&display=swap" rel="stylesheet">
@@ -27,12 +27,12 @@
   </header>
   <main>
     <section class="hi"><h1>Hi, User! <br> What do you want to do today?</h1></section>
-    <section class="new-post">
-      <a href="./newpost.html">
-        <button>New post</button>
-      </a>
-    </section>
+    
     <section class="blog-feed-admin">
+      <a href="./newpost.html">
+        <button class="new">Create a new post</button>
+      </a>
+      <h2>Manage blog posts</h2> 
       <div id="display-posts"></div>
     </section>
   </main>

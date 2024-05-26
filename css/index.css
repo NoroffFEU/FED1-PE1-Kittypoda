@@ -41,14 +41,19 @@
 .post-wrapper {
   flex: 1 1 1; 
   box-sizing: border-box;
-  margin: 0;  
+  
 }
 
+.display-posts{
+  padding: 40px;
+}
 
 .post-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  
 }
 
 
@@ -86,6 +91,32 @@
   padding: 0px;  
 }
 
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  border: 2px solid #0E3728;
+  border-radius: 10px;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 
 @media (min-width: 737px) {

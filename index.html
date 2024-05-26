@@ -12,6 +12,7 @@
  <script type="module" src="/scripts/index.mjs"></script>
  <script type="module" src="/scripts/utilitys/api.mjs"></script>
  <script type="module" src="/scripts/utilitys/doFetch.mjs"></script>
+ <script type="module" src="/scripts/utilitys/carousel.mjs"></script>
 </head>
 <body>
   <header>
@@ -32,9 +33,12 @@
       <h1><span>Explore the world<br>one bite at a time..</span></h1>
       <button>See more <a href="#"></a></button>
     </section>
-    <section class="carousel">
-      <h2>Most recent</h2>
-      Carousel
+    <section class="carousel-id">
+      <div class="carousel">
+        <div class="carousel-inner" id="carousel-inner">
+        </div>
+      </div>
+      
     </section>
     <section class="blog-grid">
       <div id="display-posts"></div>
