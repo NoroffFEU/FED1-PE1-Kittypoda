@@ -23,17 +23,54 @@
   line-height: 2;
 }
 
-
-
-.carousel h2{
-  text-transform: uppercase;
-  margin: 20px;
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50px;
+  border: solid 1.5px #0E3728;
+  margin-bottom: 20px;
 }
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+
+}
+
+
+
+.carousel-item img {
+  width: 100%;
+  height: 200px;
+  display: block;
+  object-fit: cover;
+  
+}
+
+.carousel-item h1 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
 
 #display-posts {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; 
+  gap: 10px; 
   justify-content: center;  
 }
 
@@ -60,31 +97,43 @@
 .media-container {
   position: relative;
   text-align: center;
+  
 }
 
-.media-container h1 {
+.media-container h2 {
   position: absolute;
   display: flex;
   align-items: center;
   top:50%;
   left: 50%;
-  border-radius: 4px;
   opacity: 0;
-  color: #0E3728;
-  font-size: 35px;
   transform: translate(-50%, -50%);
 }
 
-.media-container h1:hover{
+h2 span {
+  background-color: #FDF0F2;
+  line-height: 1;
+}
+
+
+.media-container span{
+  line-height: 1;
+}
+
+
+  
+.media-container h2:hover{
   opacity: 1;
 }
-  
+
+
+
 
 
 
 .post-container img{
-  height: 340px;
-  width: 360px;
+  height: 140px;
+  width: 160px;
   object-fit: cover;
   border-radius: 50px;
   border: solid 1.5px #0E3728;
@@ -92,31 +141,6 @@
 }
 
 
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  overflow: hidden;
-  border: 2px solid #0E3728;
-  border-radius: 10px;
-}
-
-.carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-  min-width: 100%;
-  box-sizing: border-box;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 
 @media (min-width: 737px) {
@@ -124,6 +148,7 @@
   .hero-element{
     height: 869px;
     max-width: 1600px;
+   
   }
 
   .hero-element >h1{
@@ -137,6 +162,23 @@
   .post-container img{
     width: 550px;
     height: 300px;  
+  }
+
+  .media-container h1 {
+    font-size: 40px;
+  }
+  
+  .carousel {
+    max-width: 1600px;
+    height: 600px;
+  }
+
+  .carousel-item h1{
+    font-size: 50px;  
+  }
+
+  .carousel-item img {
+    height: 600px; 
   }
 }
 

@@ -16,7 +16,7 @@ function createPostElements(post, includeMedia) {
     window.location.assign(newLink);
   });
 
-  const heading = document.createElement('h1');
+  const heading = document.createElement('h2');
   const headingSpan = document.createElement('span');
   headingSpan.textContent = post.title;
   heading.appendChild(headingSpan);
