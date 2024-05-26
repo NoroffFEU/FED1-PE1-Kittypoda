@@ -21,6 +21,12 @@ function createPostElements(post, includeMedia) {
   headingSpan.textContent = post.title;
   heading.appendChild(headingSpan);
 
+  const author = document.createElement('h3');
+  
+ 
+  
+  
+
   if (includeMedia) {
     const mediaContainer = document.createElement('div');
     mediaContainer.classList.add('media-container');

@@ -55,17 +55,27 @@
   
 }
 
-.carousel-item h1 {
+.carousel-item h1{
   position: absolute;
   display: flex;
   align-items: center;
   font-size: 30px;
   top:50%;
-  left: 50%;
+  left: 37%;
   transform: translate(-50%, -50%);
   opacity: 1;
 }
 
+.carousel-item h3{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top:70%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  text-transform: uppercase;
+}
 
 #display-posts {
   display: flex;

@@ -1,7 +1,6 @@
 import { apiUserurl } from "./api.mjs";
 import { doFetch } from "./doFetch.mjs";
 
-
 async function fetchLatestPosts() {
   try {
     const responseData = await doFetch(apiUserurl);
@@ -46,7 +45,11 @@ function createCarouselItem(post) {
   headingSpan.textContent = post.title;
   heading.appendChild(headingSpan);
 
-  overlay.appendChild(heading);
+  const author = document.createElement('h3');
+  const userName = localStorage.getItem('userName'); // Get the user's name from localStorage
+  author.textContent = userName ? `By: ${userName}` : 'By: Anonymous';
+  overlay.append(heading, author);
+  
   mediaContainer.appendChild(image);
   mediaContainer.appendChild(overlay);
   postPageLink.appendChild(mediaContainer);
