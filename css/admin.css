@@ -1,9 +1,18 @@
 
 .hi{
-  margin-left: 20px;
-  padding: 30px;
-  text-align: center;
-  
+  padding: 70px 10px 10px;
+  text-align: center;  
+}
+
+.logout-button-class{
+  position: absolute;
+  right: 20px;
+  padding: 10px;
+}
+
+#logout-button{
+  background-color:#EFF7F1;
+  color: #0E3728;
 }
 
 .blog-feed-admin{
@@ -11,7 +20,7 @@
  border-radius: 50px;
  border: solid 1.5px #0E3728;
  padding: 20px;
- margin: 40px;
+ margin: 10px 20px 20px 20px;
 }
 
 .blog-feed-admin h3{
@@ -31,8 +40,12 @@
 @media (min-width: 737px) {
   .new{
     position: absolute;
-    right: 50px;
-    
+    right: 50px; 
   }
+
+  .hi{
+    padding: 40px;  
+  }
+  
 
 }
