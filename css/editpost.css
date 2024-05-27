@@ -1,0 +1,18 @@
+main{
+  min-height: 1000px;
+}
+
+.new-post h1{
+  text-align: center;  
+}
+
+#edit-post-form{
+  display: flex;
+  flex-direction: column;
+  padding: 70px;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center; 
+}

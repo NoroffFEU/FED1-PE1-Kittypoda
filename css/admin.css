@@ -17,6 +17,11 @@ main{
   color: #0E3728;
 }
 
+.blog-feed-admin a {
+  margin-left: 10px 
+}
+
+
 .blog-feed-admin{
  background-color: #F2F8FD;
  border-radius: 50px;

@@ -16,17 +16,13 @@ async function loginUser(url, userData) {
 
     localStorage.setItem('accessToken', accessToken);
     localStorage.setItem('userName',JSON.stringify (json.data.name))
-    console.log(json.data.name)
     
-    
-
     return json;
   } catch (error) {
     throw error;
   }
 }
 
-// Handle form submission
 const loginForm = document.getElementById('loginForm');
 
 loginForm.addEventListener('submit', async (event) => {
@@ -41,12 +37,9 @@ loginForm.addEventListener('submit', async (event) => {
   };
 
   try {
-    // Call loginUser function with API URL and user data
     const result = await loginUser(apiLogin, userData);
-    // Redirect or perform actions upon successful login
-    console.log('Registration result:', result);
+    window.location.href = './admin.html';
   } catch (error) {
-    // Handle login error
     alert('Login failed. Please check your credentials.');
   }
 });

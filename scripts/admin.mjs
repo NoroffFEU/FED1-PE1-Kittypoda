@@ -2,6 +2,7 @@ import { apiUserurl } from "./utilitys/api.mjs";
 import { doFetch } from "./utilitys/doFetch.mjs";
 import { doDelete } from "./utilitys/doDelete.mjs";
 
+
 export function generatePost(post) {
   const postWrapper = document.createElement('div');
   postWrapper.classList.add('post-wrapper');
@@ -29,6 +30,7 @@ export function generatePost(post) {
   postPageLink.appendChild(mediaContainer);
   postContainer.appendChild(postPageLink);
 
+  // Create and append delete button
   const deleteButton = document.createElement('a');
   deleteButton.textContent = 'Delete';
   deleteButton.addEventListener('click', async (event) => {
@@ -40,7 +42,13 @@ export function generatePost(post) {
     }
   });
 
+  // Create and append edit button
+  const editButton = document.createElement('a');
+  editButton.textContent = 'Edit';
+  editButton.href = `./editpost.html?postId=${post.id}`; // Redirect to edit page with postId
+
   postContainer.appendChild(deleteButton);
+  postContainer.appendChild(editButton);
   postWrapper.appendChild(postContainer);
 
   return postWrapper;
@@ -71,9 +79,7 @@ async function renderHomePage() {
 
 renderHomePage();
 
-
 document.getElementById('logout-button').addEventListener('click', () => {
-  
   localStorage.removeItem('accessToken');
   localStorage.removeItem('userName');
   window.location.href = './login.html';
