@@ -13,6 +13,11 @@
   padding: 50px 20px 5px 20px;
 }
 
+.hero-element span{
+  background-color: #F2F8FD;
+  line-height: 2;
+}
+
 .hero-element button {
   margin: 0px 0px 0px 20px;
 }
@@ -73,6 +78,13 @@
 
 .carousel-item h1 {
   padding: 30px 0px 5px 20px;  
+}
+
+.carousel-item span{
+  
+    background-color: #FDF0F2;
+    line-height: 2
+
 }
 
 .carousel-item h3 {

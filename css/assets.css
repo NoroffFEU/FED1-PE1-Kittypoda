@@ -91,6 +91,7 @@ h3{
   margin: 0px;
   padding: 0%;
   text-transform: uppercase;
+  color: #0E3728;
 }
 
 p{
@@ -117,10 +118,7 @@ button:hover {
   color: #0E3728;
 }
 
-span{
-  background-color: #FDF0F2;
-  line-height: 2;
-}
+
 
 footer{
   background-color: #0E3728;
