@@ -38,7 +38,7 @@ loginForm.addEventListener('submit', async (event) => {
 
   try {
     const result = await loginUser(apiLogin, userData);
-    window.location.href = './admin.html';
+    window.location.href = '../admin.html';
   } catch (error) {
     alert('Login failed. Please check your credentials.');
   }

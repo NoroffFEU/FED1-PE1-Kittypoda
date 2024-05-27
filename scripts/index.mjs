@@ -13,7 +13,7 @@ export function generatePost(post) {
   postPageLink.addEventListener('click', (event) => {
     event.preventDefault();
     const postId = post.id;
-    const newLink = `./html/blogpost.html?postId=${postId}`;
+    const newLink = `../html/blogpost.html?postId=${postId}`;
     window.location.assign(newLink);
   });
 

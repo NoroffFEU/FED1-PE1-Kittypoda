@@ -34,7 +34,7 @@ newPostForm.addEventListener('submit', async (event) => {
 
     if (response.ok) {
       alert('Blog post successful');
-      window.location.href = './admin.html'; // Redirect to the admin board
+      window.location.href = '../admin.html'; // Redirect to the admin board
     } else {
       alert(`Error: ${json.message || 'Something went wrong'}`);
     }
