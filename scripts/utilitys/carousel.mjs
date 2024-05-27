@@ -1,11 +1,11 @@
-import { apiUserurl } from "./api.mjs";
+import { apiUserurl, notLogin } from "./api.mjs";
 import { doFetch } from "./doFetch.mjs";
 
-async function fetchLatestPosts() {
+async function fetchLatestPosts(url) {
   try {
-    const responseData = await doFetch(apiUserurl);
+    const responseData = await doFetch(url);
     if (responseData && responseData.data) {
-      const posts = responseData.data.slice(0, 3); // Get the latest three posts
+      const posts = responseData.data.slice(0, 3); 
       return posts;
     } else {
       console.error('No data found in the API response.');
@@ -23,7 +23,7 @@ function createCarouselItem(post) {
 
   const postPageLink = document.createElement('a');
   postPageLink.href = `./html/blogpost.html?postId=${post.id}`;
-  
+
   const mediaContainer = document.createElement('div');
   mediaContainer.classList.add('media-container');
 
@@ -33,7 +33,7 @@ function createCarouselItem(post) {
     image.alt = post.media.alt || 'Post media';
   } else {
     // default image 
-    image.src = 'https://www.colorhexa.com/a0fbd6.png'; 
+    image.src = 'https://www.colorhexa.com/a0fbd6.png';
     image.alt = 'Default media';
   }
 
@@ -52,7 +52,7 @@ function createCarouselItem(post) {
   author.appendChild(authorSpan);
 
   overlay.append(heading, author);
-  
+
   mediaContainer.appendChild(image);
   mediaContainer.appendChild(overlay);
   postPageLink.appendChild(mediaContainer);
@@ -63,7 +63,10 @@ function createCarouselItem(post) {
 
 async function renderCarousel() {
   const carouselInner = document.getElementById('carousel-inner');
-  const posts = await fetchLatestPosts();
+  const userName = JSON.parse(localStorage.getItem('userName'));
+  const apiUrl = userName ? apiUserurl : notLogin;
+
+  const posts = await fetchLatestPosts(apiUrl);
 
   posts.forEach(post => {
     const carouselItem = createCarouselItem(post);
