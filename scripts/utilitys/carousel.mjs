@@ -48,7 +48,7 @@ function createCarouselItem(post) {
   const author = document.createElement('h3');
   const authorSpan = document.createElement('span');
   const userName = localStorage.getItem('userName');
-  authorSpan.textContent = userName ? `By: ${userName}` : 'By: Anonymous';
+  authorSpan.textContent = userName ? `By: ${userName}` : 'By: Kittypoda';
   author.appendChild(authorSpan);
 
   overlay.append(heading, author);
