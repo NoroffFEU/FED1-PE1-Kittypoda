@@ -22,7 +22,7 @@ function generateSinglePost(onePost) {
   const heading = document.createElement('h1');
   heading.textContent = onePost.title;
 
-  const postDate = document.createElement('h2');
+  const postDate = document.createElement('h3');
   postDate.textContent = onePost.created;
 
   const body = document.createElement('p');

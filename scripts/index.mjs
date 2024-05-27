@@ -1,4 +1,4 @@
-import { apiUserurl } from "./utilitys/api.mjs";
+import { apiUserurl, notLogin } from "./utilitys/api.mjs";
 import { doFetch } from "./utilitys/doFetch.mjs";
 import { doDelete } from "./utilitys/doDelete.mjs";
 
@@ -115,13 +115,22 @@ function displayPosts(posts, includeMedia = true, withDelete = false) {
 
 export async function renderHomePage(includeMedia = true, withDelete = false) {
   try {
-    const responseData = await doFetch(apiUserurl);
-    if (responseData && responseData.data) {
+    const userName = JSON.parse(localStorage.getItem('userName'))
+    if (userName){ 
+      const responseData = await doFetch(apiUserurl);
       const posts = responseData.data;
       displayPosts(posts, includeMedia, withDelete);
-    } else {
-      console.error('No data found in the API response.');
     }
+
+    else{
+
+      const responseData = await doFetch(notLogin);
+    const posts = responseData.data;
+    displayPosts(posts, includeMedia, withDelete)
+
+    }
+    
+    
   } catch (error) {
     console.error('Error fetching posts:', error);
   }

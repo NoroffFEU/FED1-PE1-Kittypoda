@@ -16,5 +16,8 @@ console.log(userName)
 export const API_USER_URL = `/blog/posts/${userName}`
 console.log(API_USER_URL)
 
+export const notLogin = API_BASE_URL + `/blog/posts/kittypoda`
+console.log(notLogin)
+
 export const apiUserurl = API_BASE_URL + API_USER_URL
 console.log(apiUserurl)
