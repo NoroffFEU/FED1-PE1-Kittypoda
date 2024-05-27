@@ -1,6 +1,6 @@
 import { apiUserurl } from "./utilitys/api.mjs";
 import { doFetch } from "./utilitys/doFetch.mjs";
-import { notLogin } from "./utilitys/api.mjs";
+import { doDelete } from "./utilitys/doDelete.mjs";
 
 export function generatePost(post) {
   const postWrapper = document.createElement('div');
@@ -20,7 +20,6 @@ export function generatePost(post) {
   const mediaContainer = document.createElement('div');
   mediaContainer.classList.add('media-container');
 
-
   const heading = document.createElement('h2');
   const headingSpan = document.createElement('span');
   headingSpan.textContent = post.title;
@@ -29,6 +28,19 @@ export function generatePost(post) {
   mediaContainer.append(heading);
   postPageLink.appendChild(mediaContainer);
   postContainer.appendChild(postPageLink);
+
+  const deleteButton = document.createElement('a');
+  deleteButton.textContent = 'Delete';
+  deleteButton.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const postId = post.id;
+    const success = await doDelete(`${apiUserurl}/${postId}`);
+    if (success) {
+      postWrapper.remove();
+    }
+  });
+
+  postContainer.appendChild(deleteButton);
   postWrapper.appendChild(postContainer);
 
   return postWrapper;
@@ -60,16 +72,9 @@ async function renderHomePage() {
 renderHomePage();
 
 
-
-
-
-
-
-
 document.getElementById('logout-button').addEventListener('click', () => {
-  // Clear local storage
+  
   localStorage.removeItem('accessToken');
   localStorage.removeItem('userName');
-  // Redirect to the login page
   window.location.href = './login.html';
 });

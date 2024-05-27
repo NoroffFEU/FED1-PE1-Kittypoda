@@ -1,11 +1,7 @@
-export async function doDelete(url) {
-  const token = localStorage.getItem('accessToken');
-  if (!token) {
-    console.error('No access token found');
-    return false;
-  }
 
+export async function doDelete(url) {
   try {
+    const token = localStorage.getItem('accessToken');
     const response = await fetch(url, {
       method: 'DELETE',
       headers: {
@@ -15,15 +11,15 @@ export async function doDelete(url) {
     });
 
     if (response.ok) {
-      console.log('Request successful');
+      console.log('Post deleted successfully');
       return true;
     } else {
-      const errorText = await response.text();
-      console.error(`Failed to delete: ${response.status} - ${response.statusText} - ${errorText}`);
+      console.error('Failed to delete post:', response.status, response.statusText);
       return false;
     }
   } catch (error) {
-    console.error('Error during delete request:', error);
+    console.error('Error deleting post:', error);
     return false;
   }
 }
+
