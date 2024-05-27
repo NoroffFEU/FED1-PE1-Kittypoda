@@ -1,4 +1,6 @@
-
+main{
+  min-height: 800px;
+}
 .hi{
   padding: 70px 10px 10px;
   text-align: center;  
@@ -38,6 +40,11 @@
 }
 
 @media (min-width: 737px) {
+
+  main{
+    min-height: 1000px;
+  }
+
   .new{
     position: absolute;
     right: 50px; 
