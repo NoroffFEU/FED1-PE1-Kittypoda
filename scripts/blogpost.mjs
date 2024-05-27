@@ -1,6 +1,12 @@
 import { apiUserurl, notLogin } from "./utilitys/api.mjs";
 import { doFetch } from "./utilitys/doFetch.mjs";
 
+function formatDate(isoString) {
+  const date = new Date(isoString);
+  const options = { day: 'numeric', month: 'long', year:'numeric'};
+  return date.toLocaleDateString('en-GB', options);
+}
+
 function generateSinglePost(onePost) {
   let main = document.querySelector("main");
 
@@ -22,12 +28,17 @@ function generateSinglePost(onePost) {
   heading.textContent = onePost.title;
 
   const postDate = document.createElement("h3");
-  postDate.textContent = onePost.created;
+  postDate.textContent = formatDate(onePost.created);
+
+  const author = document.createElement('h3');
+  const userName = localStorage.getItem('userName');
+  author.textContent = userName ? `By: ${userName}` : 'By: Anonymous';
+
 
   const body = document.createElement("p");
   body.textContent = onePost.body;
 
-  postContainer.append(heading, postDate, mediaContainer, body);
+  postContainer.append(heading, author, postDate, mediaContainer, body);
   main.appendChild(postContainer);
 
   return postContainer;
