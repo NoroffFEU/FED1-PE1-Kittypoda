@@ -1,6 +1,6 @@
 .hero-element{
   margin: 20px auto;
-  background-image:url('/img/hero\ img.webp');
+  background-image:url('./img/hero\ img.webp');
   background-size: cover;
   background-repeat: no-repeat;
   height: 340px;
