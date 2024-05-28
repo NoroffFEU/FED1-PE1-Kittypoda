@@ -22,7 +22,7 @@ function createCarouselItem(post) {
   item.classList.add('carousel-item');
 
   const postPageLink = document.createElement('a');
-  postPageLink.href = `../html/blogpost.html?postId=${post.id}`;
+  postPageLink.href = `./html/blogpost.html?postId=${post.id}`;
 
   const mediaContainer = document.createElement('div');
   mediaContainer.classList.add('media-container');

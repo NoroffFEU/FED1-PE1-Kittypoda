@@ -45,7 +45,7 @@ registrationForm.addEventListener('submit', async (event) => {
 
   try {
     const result = await registerUser(apiRegisterAccount, userData);
-    window.location.href = '../login.html';
+    window.location.href = './login.html';
   } catch (error) {
     alert('Registration failed');
   }
