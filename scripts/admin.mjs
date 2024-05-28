@@ -14,7 +14,7 @@ export function generatePost(post) {
   postPageLink.addEventListener('click', (event) => {
     event.preventDefault();
     const postId = post.id;
-    const newLink = `./html/blogpost.html?postId=${postId}`;
+    const newLink = `/html/blogpost.html?postId=${postId}`;
     window.location.assign(newLink);
   });
 
@@ -45,7 +45,7 @@ export function generatePost(post) {
   // Create and append edit button
   const editButton = document.createElement('a');
   editButton.textContent = 'Edit';
-  editButton.href = `../editpost.html?postId=${post.id}`; // Redirect to edit page with postId
+  editButton.href = `./editpost.html?postId=${post.id}`; // Redirect to edit page with postId
 
   postContainer.appendChild(deleteButton);
   postContainer.appendChild(editButton);
@@ -82,5 +82,5 @@ renderHomePage();
 document.getElementById('logout-button').addEventListener('click', () => {
   localStorage.removeItem('accessToken');
   localStorage.removeItem('userName');
-  window.location.href = '../login.html';
+  window.location.href = './login.html';
 });
