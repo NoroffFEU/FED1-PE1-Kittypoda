@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (response.ok) {
         alert('Post updated successfully!');
-        window.location.href = '../admin.html';
+        window.location.href = './admin.html';
       } else {
         console.error('Failed to update post:', json);
         alert('Failed to update post. Please try again.');
