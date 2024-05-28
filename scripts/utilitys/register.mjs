@@ -17,6 +17,7 @@ import { apiRegisterAccount } from "./api.mjs";
       console.log (json.data.name)
       return json;
   } catch (error) {
+    alert('Registration failed');
       console.error('Registration failed:', error);
   }
 }
